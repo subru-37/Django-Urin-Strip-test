@@ -4,8 +4,7 @@ import numpy as np
 from django.http import HttpResponse
 from django.http import Http404
 from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse, HttpRequest, Http404
-from .models import ImageModel
+from django.http import JsonResponse, Http404
 from .utils import stripColors
 
 
@@ -19,13 +18,10 @@ def processImage(request):
         image_file = []
         try:
             id = request.POST.get('uuid')
-            # print(id)
         except:
             raise Http404("Id not loaded")
-        # print(request.FILES)
         try: 
             image_file = request.FILES['image']                     # Access uploaded file(s)
-            # print(request.FILES)
         except: 
             raise Http404("image not loaded")
         if id and len(image_file)!=0:
@@ -34,6 +30,7 @@ def processImage(request):
             data = stripColors(img)
             print(data)
             return HttpResponse(JsonResponse(data))
+        
         else: 
             raise Http404("id doesn't exist") 
         
