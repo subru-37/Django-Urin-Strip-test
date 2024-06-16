@@ -7,7 +7,7 @@ def stripColors(img):
 
     height, width, _ = img.shape                                                 # Calculate the width of each square
     img = cv2.resize(img, (int(width/1.8),int( height/1.8)))                     # resize the image for better viewing 
-    image = img[int(height*0.01):int(height*0.37),int(width*0.3):int(width*0.4)] # Crop the image for better accuracy while diving 
+    image = img[int(height*0.01):int(height*0.36),int(width*0.3):int(width*0.4)] # Crop the image for better accuracy while diving 
     square_height = image.shape[0] // num_squares                                # image into 10 sections along with height
     
     data = []
@@ -18,8 +18,10 @@ def stripColors(img):
         x2 = width
 
         b,g,r = cv2.split(image[y1:y2, x1:x2])
-        data.append([np.mean(r), np.mean(g), np.mean(b)])
-        
+        data.append([np.round(np.mean(r)), np.round(np.mean(g)), np.round(np.mean(b))])
+        cv2.rectangle(image, (x1, y1), (x2, y2), (255, 0, 0), 2)
+    cv2.imshow('Image', image)
+    cv2.waitKey(0)
     my_dict = {
         'URO': data[0],
         'BIL': data[1],
