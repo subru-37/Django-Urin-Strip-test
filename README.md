@@ -4,9 +4,8 @@
 
 1. [Prerequisites](#prerequisites)
 2. [Setup](#setup)
-3. [Running the Application](#running-the-application)
-4. [API Documentation](#api-documentation)
-5. [Visual Representation](#visual-representation)
+3. [API Documentation](#api-documentation)
+4. [Visual Representation](#visual-representation)
 
 ## Prerequisites
 
