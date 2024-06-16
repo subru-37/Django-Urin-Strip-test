@@ -20,8 +20,8 @@ def stripColors(img):
         b,g,r = cv2.split(image[y1:y2, x1:x2])
         data.append([np.round(np.mean(r)), np.round(np.mean(g)), np.round(np.mean(b))])
         cv2.rectangle(image, (x1, y1), (x2, y2), (255, 0, 0), 2)
-    cv2.imshow('Image', image)
-    cv2.waitKey(0)
+    # cv2.imshow('Image', image)
+    # cv2.waitKey(0)
     my_dict = {
         'URO': data[0],
         'BIL': data[1],
