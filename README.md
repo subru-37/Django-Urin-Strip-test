@@ -6,6 +6,7 @@
 2. [Setup](#setup)
 3. [API Documentation](#api-documentation)
 4. [Visual Representation](#visual-representation)
+5. [References](#references)
 
 ## Prerequisites
 
@@ -83,3 +84,6 @@ python manage.py runserver --settings=mysite.settings
 
   ![image](https://github.com/subru-37/Django-Urin-Strip-test/assets/93091455/630f7282-816a-471b-aead-a8d0429d988b)
 
+## References
+- https://docs.djangoproject.com/en/5.0/ref/request-response/
+- https://www.geeksforgeeks.org/how-to-detect-shapes-in-images-in-python-using-opencv/
